@@ -81,7 +81,6 @@
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.blacklistedKernelModules = [ "nouveau" ];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -91,7 +90,7 @@
 
     powerManagement.enable = true;
     powerManagement.finegrained = true;
-    dynamicBoost.enable = true;
+    #dynamicBoost.enable = true;
 
     prime = {
       offload = {
