@@ -94,7 +94,7 @@
     powerManagement.finegrained = true;
 
     #DESCOMENTAR ESTA LINEA DESPUES DEL PRIMER REBUILD!!!!!!!!!! --->
-    dynamicBoost.enable = true;
+    #dynamicBoost.enable = true;
 
     prime = {
       offload = {
