@@ -136,6 +136,7 @@
     cava
     cmatrix
     heroic
+    prismlauncher
     mpv
     virt-viewer
     virtiofsd
