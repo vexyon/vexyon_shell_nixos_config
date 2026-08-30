@@ -2,9 +2,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     vexyon.url = "github:vexyon/vexyon_shell_nixos";
+    comfyui-nix.url = "github:utensils/comfyui-nix";
   };
 
-  outputs = { nixpkgs, vexyon, ... }: {
+  outputs = { nixpkgs, vexyon, comfyui-nix, ... }: {
     # ⚠ REPLACE `myhost` with your own machine's hostname (an identifier — run
     #   `hostname` in a terminal if you are not sure what yours is).
     #   `myhost` appears TWICE: here, and in the `nixos-rebuild switch
@@ -15,7 +16,9 @@
       modules = [
         ./configuration.nix
         vexyon.nixosModules.vexyon
+        comfyui-nix.nixosModules.default
         {
+          nixpkgs.overlays = [ comfyui-nix.overlays.default ];
           services.vexyon = {
             enable = true;
             # ⚠ REQUIRED — replace `yourname` with your actual Linux username.
@@ -32,6 +35,16 @@
           # ⚠ SECOND occurrence of `yourname` — replace it here too, with the
           #   same username you used above.
           users.users.vexyon.extraGroups = [ "wheel" ];
+
+          # ComfyUI, sin tocar configuration.nix
+          services.comfyui = {
+            enable = true;
+            gpuSupport = "cuda";
+            enableManager = true;
+            port = 8188;
+            listenAddress = "127.0.0.1";
+            dataDir = "/home/vexyon/Storage/AI-Models";
+            openFirewall = false;
         }
       ];
     };
