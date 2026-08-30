@@ -129,6 +129,7 @@
     git
     brave
     claude-code
+    docker
     steam
     feishin
     vesktop
