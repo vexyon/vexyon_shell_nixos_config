@@ -175,6 +175,7 @@
   systemd.tmpfiles.rules = [
     "r /var/lib/systemd/rfkill/pci-0000:00:14.0-usb-0:14:1.0:bluetooth"
   ];
+
   #Tailscale
   services.tailscale.enable = true;
 
