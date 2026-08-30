@@ -168,13 +168,20 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  boot.extraModprobeConfig = ''
-    options ideapad_laptop no_bt_rfkill=1
-  '';
+#  boot.extraModprobeConfig = ''
+#    options ideapad_laptop no_bt_rfkill=1
+#  '';
+#
+#  systemd.tmpfiles.rules = [
+#    "r /var/lib/systemd/rfkill/pci-0000:00:14.0-usb-0:14:1.0:bluetooth"
+#  ];
 
-  systemd.tmpfiles.rules = [
-    "r /var/lib/systemd/rfkill/pci-0000:00:14.0-usb-0:14:1.0:bluetooth"
-  ];
+# Disco de 1TB para modelos de IA (ComfyUI)
+  fileSystems."/home/vexyon/Storage" = {
+    device = "/dev/disk/by-uuid/7b7c906a-320e-4941-b844-884f73ec7fc9";
+    fsType = "ext4";
+    options = [ "defaults" "nofail" ];
+  };
 
   #Tailscale
   services.tailscale.enable = true;
