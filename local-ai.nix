@@ -6,7 +6,7 @@ let
   local-code = pkgs.writeShellScriptBin "local-code" ''
     set -uo pipefail
 
-    export OLLAMA_MODELS=/home/vexyon/AI-Models-Code
+    export OLLAMA_MODELS=/home/vexyon/Storage/AI-Models-Code
 
     up() { curl -sf --max-time 1 http://127.0.0.1:11434/api/version >/dev/null 2>&1; }
 
@@ -29,7 +29,7 @@ let
     exec ${comfyPkg}/bin/comfy-ui \
       --listen 127.0.0.1 \
       --port 8188 \
-      --base-directory /home/vexyon/AI-Models-IMG \
+      --base-directory /home/vexyon/Storage/AI-Models-IMG \
       --enable-manager \
       "$@"
   '';
