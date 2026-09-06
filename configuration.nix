@@ -96,7 +96,7 @@
     powerManagement.finegrained = true;
 
     #DESCOMENTAR ESTA LINEA DESPUES DEL PRIMER REBUILD!!!!!!!!!! --->
-    dynamicBoost.enable = true;
+#    dynamicBoost.enable = true;
 
     prime = {
       offload = {
@@ -146,6 +146,7 @@
     supergfxctl
     opencode
     ollama-cuda
+    nmap
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -183,11 +184,11 @@
 #  ];
 
 # Disco de 1TB para modelos de IA (ComfyUI)
-  fileSystems."/home/vexyon/Storage" = {
-    device = "/dev/disk/by-uuid/dea7e983-0984-4bde-a17e-ec2919f96369";
-    fsType = "ext4";
-    options = [ "defaults" "nofail" ];
-  };
+#  fileSystems."/home/vexyon/Storage" = {
+#    device = "/dev/disk/by-uuid/dea7e983-0984-4bde-a17e-ec2919f96369";
+#    fsType = "ext4";
+#    options = [ "defaults" "nofail" ];
+#  };
   
   #Docker
   virtualisation.docker.enable = true;
