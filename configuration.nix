@@ -72,9 +72,6 @@
     packages = with pkgs; [];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # ---------------------------------------------------------------------
   # GRÁFICOS: Hyprland + NVIDIA híbrido (Intel iGPU por defecto, NVIDIA vía prime-run)
   # ---------------------------------------------------------------------
