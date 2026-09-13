@@ -4,9 +4,10 @@
     vexyon.url = "github:vexyon/vexyon_shell_nixos";
     comfyui-nix.url = "github:utensils/comfyui-nix";
     hermes-agent.url = "github:NousResearch/hermes-agent";
+    codex.url = "github:sadjow/codex-cli-nix";
   };
 
-  outputs = inputs@{ nixpkgs, vexyon, comfyui-nix, hermes-agent, ... }:
+  outputs = inputs@{ nixpkgs, vexyon, comfyui-nix, hermes-agent, codex, ... }:
     let
       system = "x86_64-linux";
     in
@@ -26,6 +27,7 @@
             users.users.vexyon.extraGroups = [ "wheel" ];
             environment.systemPackages = [
               hermes-agent.packages.${system}.minimal.hermesDesktop
+              codex.packages.${system}.default
 
             ];
           }
