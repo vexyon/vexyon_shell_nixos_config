@@ -144,8 +144,6 @@
     virt-viewer
     virtiofsd
     supergfxctl
-    opencode
-    ollama-cuda
     nmap
     nodejs
   ];
