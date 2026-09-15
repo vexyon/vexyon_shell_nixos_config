@@ -256,7 +256,6 @@ in
   environment.systemPackages = [
     playswitch
     desktopItem
-    pkgs.v4l-utils # v4l2-ctl, para diagnosticar la capturadora
     pkgs.alsa-utils # amixer, para mirar el conmutador de captura a mano
   ];
 }
